@@ -81,7 +81,7 @@ class RestaurantTest {
 
 
     //<<<<<<<<<<<<<<<<<<<<<<<Calculate the order Total>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    //Write a failing case as per the TDD process
+    //The following test case has passed after implementing the method of "getOrderValue".
     @Test
     public void add_up_price_of_each_item_in_the_menu_will_give_the_total_price(){
         restaurant.addToMenu("Sweet corn soup",119);
@@ -89,10 +89,20 @@ class RestaurantTest {
         List<String> itemsToOrder = new ArrayList<>();
         itemsToOrder.add("Sweet corn soup");
         itemsToOrder.add("Vegetable lasagne");
-        double total = restaurant.getOrderValue(itemsToOrder);
+        int total = restaurant.getOrderValue(itemsToOrder);
         assertEquals(119+269,total);
     }
-
+    //Added one more case:
+    @Test
+    public void add_up_price_of_each_item_in_the_menu_will_give_the_total_price_2(){
+        restaurant.addToMenu("item1",100);
+        restaurant.addToMenu("item2", 200);
+        List<String> itemsToOrder = new ArrayList<>();
+        itemsToOrder.add("item1");
+        itemsToOrder.add("item2");
+        int total = restaurant.getOrderValue(itemsToOrder);
+        assertEquals(100+200,total);
+    }
 
 }
 

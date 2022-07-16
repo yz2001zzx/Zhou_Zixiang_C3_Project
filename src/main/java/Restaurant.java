@@ -70,7 +70,14 @@ public class Restaurant {
         return name;
     }
 
-    public Double getOrderValue(List<String> itemsToOrder){ return 0.0; } // A dummy method which as not yet been implemented;
+    //The following method is to get the total $ for selected items from the menu.
+    public int getOrderValue(List<String> itemsToOrder){
+        int total = 0;
+        for(String item:itemsToOrder){
+            total += findItemByName(item).getPrice();
+        }
+        return total;
+    }
 
 }
 
