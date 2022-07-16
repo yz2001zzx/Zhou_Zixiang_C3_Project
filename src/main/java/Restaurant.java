@@ -70,7 +70,7 @@ public class Restaurant {
         return name;
     }
 
- /*   public Double getOrderValue(List<String> itemsToOrder){ return 0.0; } // A dummy method which as not yet been implemented;*/
+    public Double getOrderValue(List<String> itemsToOrder){ return 0.0; } // A dummy method which as not yet been implemented;
 
 }
 
